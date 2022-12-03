@@ -1,0 +1,254 @@
+/* start variables */
+:root {
+  --main-color: #2196f3;
+  --alt-main-color: #1787e0;
+  --background-color: #ececec;
+  --lite-BG-color: #f3f3f3;
+  --transition-dur: .3s;
+}
+/* end variables */
+
+/* start global rules */
+body {
+  font-family: "Cairo", sans-serif;
+}
+/* end global rules */
+
+/* start component */
+/* end component */
+
+/* start header */
+header {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0 10px #ddd;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  align-items: center;
+}
+/* logo box  */
+header .container .logo {
+  height: 72px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+}
+header .container .logo a {
+  width: 60px;
+}
+header .container .logo h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--main-color);
+  margin-left: 10px;
+  /* display: none; */
+}
+@media (max-width:767px) {
+  header .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  header .container .logo {
+    height: 50px;
+  }
+  header .container .logo a {
+    width: 40px;
+  }
+}
+
+/* start nav main menu */
+header .container nav .main-nav {
+  display: flex;
+  align-items: center;
+}
+
+header .container nav .main-nav > li > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 72px;
+  position: relative;
+  color: black;
+  text-transform: capitalize;
+  font-size: 18px;
+  padding: 0 30px;
+  transition: var(--transition-dur) ease;
+  -webkit-transition: var(--transition-dur) ease;
+  -moz-transition: var(--transition-dur) ease;
+  -ms-transition: var(--transition-dur) ease;
+  -o-transition: var(--transition-dur) ease;
+/* second way to fill  */
+  overflow: hidden;
+
+}
+
+@media (max-width:767px) {
+  header .container nav .main-nav > li > a {
+  height: 30px;
+  padding: 0 10px;
+  font-size: 14px;
+}
+}
+
+header .container nav .main-nav > li > a:hover {
+  background-color: var(--lite-BG-color);
+  color: var(--main-color);
+}
+
+header .container nav .main-nav > li > a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+
+  /* first way to fill */
+  /* background: linear-gradient(to right, var(--main-color) 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom; */
+  /* left: 0; */
+
+
+  /* second way to fill */
+  background-color: var(--main-color);
+  left: -100%;
+  overflow: hidden;
+
+}
+
+header .container nav .main-nav li a:hover:before {
+  /* first way to fill */
+  /* background-position: left bottom; */
+
+  /* second way to fill */
+  left: 0;
+}
+/* stat mega menu  */
+header .container nav .main-nav .mega-menu {
+  display: none;
+  /* display: flex; */
+  column-gap: 50px;
+  width: 100%;
+  padding: 30px;
+  border-bottom: solid 3px var(--main-color);
+  background-color: white;
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  z-index: 100;
+}
+
+@media (max-width:767px) {
+  header .container nav .main-nav .mega-menu {
+    flex-direction: column;
+  }
+}
+header .container nav .main-nav > li:last-child:hover .mega-menu {
+  display: flex;
+}
+
+header .container .main-nav .mega-menu img {
+  width: 320px;
+  margin: auto 15px;
+  flex: 1;
+}
+
+@media (max-width:991px) {
+  header .container .main-nav .mega-menu img {
+    display: none;
+  }
+}
+
+
+header .container .main-nav .mega-menu ul {
+  flex: 1;
+}
+
+header .container .mega-menu li{
+position: relative;
+}
+
+header .container .mega-menu li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  background: linear-gradient(to right, var(--lite-BG-color) 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+header .container .mega-menu li:hover::before {
+  background-position: left bottom;
+
+}
+
+
+
+header .container .mega-menu li a {
+  display: block;
+  padding: 15px;
+  color: var(--main-color);
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 18px;
+  position: relative;
+}
+
+header .container .mega-menu li:not(:last-child) a {
+  border-bottom: 1px solid #e9e6e6;
+}
+
+
+
+header .container .mega-menu li a i {
+  margin-right: 15px;
+}
+
+header .container .main-nav .mega-menu .first-menu {
+}
+
+/* end header */
+
+/* start landing section  */
+/* end landing section  */
+
+/* strat features */
+/* end features */
+
+/* start of services */
+/* end of services */
+
+/* start of portfolio */
+/* end of portfolio */
+
+/* start of about */
+/* end of about */
+
+/* start of contact */
+/* end of contact */
+
+/* footer start */
+/* footer end */
