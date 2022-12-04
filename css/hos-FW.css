@@ -3,7 +3,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font: inherit;
+  font-family: inherit;
 }
 
 img, picture, svg, video {

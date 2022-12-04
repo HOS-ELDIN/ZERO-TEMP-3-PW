@@ -227,12 +227,90 @@ header .container .mega-menu li a i {
   margin-right: 15px;
 }
 
-header .container .main-nav .mega-menu .first-menu {
-}
+
 
 /* end header */
 
 /* start landing section  */
+section.landing {
+  height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+}
+
+.landing::before {
+  content: "";
+  width: 100%;
+  height: 87vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--background-color);
+  z-index: -1;
+  transform: skewY(-5deg);
+  -webkit-transform: skewY(-5deg);
+  -moz-transform: skewY(-5deg);
+  -ms-transform: skewY(-5deg);
+  -o-transform: skewY(-5deg);
+}
+
+.landing .container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 120px;
+}
+
+.landing .container .info {
+  text-transform: capitalize;
+  max-width: 400px;
+  /* flex: 1; */
+}
+.landing .container .info h2 {
+  font-size: 40px;
+  /* font-size: 3.6vw; */
+}
+.landing .container .info p {
+  font-size: 24px;
+  line-height: 1.6;
+  margin-top: 10px;
+  color: #666;
+}
+
+@media (max-width:991px) {
+  .landing .container .info {
+    text-align: center;
+    max-width: 100%;
+  }
+  .landing .container .landing-img {
+    display: none;
+  }
+}
+
+@media (max-width:767px) {
+  .landing .container .info h2 {
+    font-size: 28px;
+  }
+  .landing .container .info p {
+    font-size: 18px;
+  }
+}
+
+
+.landing  a {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  color: var(--main-color) ;
+}
+
+
 /* end landing section  */
 
 /* strat features */
