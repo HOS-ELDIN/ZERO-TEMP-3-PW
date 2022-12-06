@@ -511,6 +511,200 @@ section.gallery {
 }
 /* end of gallery */
 
+/* strat features */
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px , 1fr));
+  gap: 40px;
+}
+
+
+
+.features .container .f-box {
+  text-align: center;
+  border: 1px solid #ccc;
+  /* position: relative; */
+}
+/* @media (max-width:767px) {
+  .features .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .features .container .f-box {
+    min-width: 80%;
+    max-width: 90%;
+  }
+} */
+.features .container .img {
+  position: relative;
+  overflow: hidden;
+}
+
+.features .container .img::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.features .container .f-box:nth-child(1) .img:before{
+  background-color: rgb(244 64 54 / 60%);
+}
+.features .container .f-box:nth-child(2) .img:before{
+  background-color: rgb(0 150 136 / 60%);
+}
+.features .container .f-box:nth-child(3) .img:before{
+  background-color: rgb(3 169 244 / 60%);
+}
+
+.features .container .img::after {
+  content: "";
+  /*width: 100%;
+  *//*height:170px;
+  */position: absolute;
+  bottom: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0px 0px 170px 0;
+  border-left-width: 500px;
+  border-color: transparent transparent rgb(255, 255, 255) transparent;
+  transition:var(--transition-dur) ;
+  -webkit-transition:var(--transition-dur) ;
+  -moz-transition:var(--transition-dur) ;
+  -ms-transition:var(--transition-dur) ;
+  -o-transition:var(--transition-dur) ;
+}
+
+.features .container .f-box:hover .img::after {
+  border-width: 0px 0 170px 0px;
+  border-right-width: 500px;
+}
+
+@media (max-width:767px) {
+  .features .container .img::after {
+  border-left-width: 665px;
+  }
+  .features .container .f-box:hover .img::after {
+    border-right-width: 665px;
+  }
+}
+
+
+.features .container .f-box .info {
+  padding: 20px;
+}
+
+.features .container .f-box .info h3 {
+  text-transform: capitalize;
+  font-size: 40px;
+  margin:0 auto 50px;
+  width: fit-content;
+  position: relative;
+}
+
+.features .container .f-box .info h3::after{
+  content: "";
+  width: 75%;
+  height: 5px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.features .container .f-box:nth-child(1) .info h3::after {
+  background-color: rgb(244 64 54);
+}
+.features .container .f-box:nth-child(2) .info h3::after {
+  background-color: rgb(0 150 136);
+}
+.features .container .f-box:nth-child(3) .info h3::after {
+  background-color: rgb(3 169 244);
+}
+
+.features .container .f-box .info p {
+  line-height: 1.8;
+  font-size: 20px;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.features .container .f-box button {
+  font-size: 22px;
+  text-transform: capitalize;
+  font-weight: 700;
+  padding: 10px 30px;
+  margin: 30px auto;
+  border: 3px solid black;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.features .container .f-box:nth-child(1) button {
+  color: rgb(244 64 54);
+  border-color: rgb(244 64 54);
+
+}
+.features .container .f-box:nth-child(2) button {
+  color: rgb(0 150 136);
+  border-color: rgb(0 150 136);
+
+}
+.features .container .f-box:nth-child(3) button {
+  color: rgb(3 169 244);
+  border-color: rgb(3 169 244);
+
+}
+
+.features .container .f-box button::before {
+  content: "";
+  width: 100%;
+  height: 110%;
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  transition: all var(--transition-dur);
+  -webkit-transition: all var(--transition-dur);
+  -moz-transition: all var(--transition-dur);
+  -ms-transition: all var(--transition-dur);
+  -o-transition: all var(--transition-dur);
+  z-index: -1;
+}
+.features .container .f-box:nth-child(1) button::before {
+  background-color: rgb(244 64 54);
+
+}
+.features .container .f-box:nth-child(2) button::before {
+  background-color: rgb(0 150 136);
+
+}
+.features .container .f-box:nth-child(3) button::before {
+  background-color: rgb(3 169 244);
+
+}
+.features .container .f-box:hover button::before {
+  left: 0;
+}
+.features .container .f-box:hover button {
+  color: white;
+}
+/* end features */
+
+
 /* start of services */
 /* end of services */
 
@@ -541,7 +735,7 @@ section.gallery {
   }
   100% {
     left:0;
-    width: 50%;
+    width: 51%;
     height: 100%;
     border-radius: 0;
     -webkit-border-radius: 0;
@@ -563,7 +757,7 @@ section.gallery {
   }
   100% {
     right:0;
-    width: 50%;
+    width: 51%;
     height: 100%;
     border-radius: 0;
     -webkit-border-radius: 0;
