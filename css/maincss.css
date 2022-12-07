@@ -66,10 +66,15 @@ body > a:hover {
   border: 2px solid black;
   width: fit-content;
   text-transform: uppercase;
-  font-size: 26px;
+  font-size: 30px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+@media (max-width:767px) {
+  .anim-heading h2 {
+  font-size: 26px;
+  }
 }
 .anim-heading h2::before,
 .anim-heading h2::after {
@@ -968,12 +973,157 @@ text-transform: capitalize;
   text-transform: capitalize;
   color: var(--main-color);
 }
-
 /* end of services */
 
-/* start of contact */
+/* start of skills */
+.skills .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* gap: 40px; */
+}
 
-/* end of contact */
+.skills .container .img{
+  max-width: 500px;
+}
+
+.skills .container .skill-bars{
+  flex: 1;
+  min-width: 290px;
+  max-width: 100%;
+}
+.skills .container .skill-bars .holder {
+  margin-bottom: 20px;
+}
+.skills .container .skill-bars h4 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-transform: capitalize;
+
+}
+.skills .container .skill-bars .prog {
+  height: 25px;
+  width: 100%;
+  background-color: #eee;
+  position: relative;
+}
+
+
+
+.skills .container .skill-bars .prog span {
+  height: 25px;
+  background-color: var(--main-color);
+  display: block;
+}
+
+.skills .container .skill-bars span::after{
+  content: attr(data-progress);
+  position: absolute;
+  top: calc(-100% - 19px);
+  right: 0;
+  border: 1px solid #bbb;
+  font-size: 12px;
+  padding: 3px 4px;
+  font-weight: bold;
+  color: var(--main-color);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+/* end of skills */
+
+/* start of works */
+.how .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.how .container .img {
+  flex-basis: 500px;
+  flex: 1;
+}
+@media (max-width:991px) {
+  .how .container {
+    flex-direction: column;
+  }
+}
+.how .container .content {
+  flex-basis: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex: 1;
+}
+
+.how .container .content .card {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding: 30px;
+  background-color: #f6f5f5 ;
+  border: 4px solid white;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  z-index: 2;
+}
+.how .container .content .card::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  background-color: #ededed;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transition: var(--transition-dur);
+  -webkit-transition: var(--transition-dur);
+  -moz-transition: var(--transition-dur);
+  -ms-transition: var(--transition-dur);
+  -o-transition: var(--transition-dur);
+}
+
+.how .container .content .card:hover::before {
+  width: 100%;
+  height: 100%
+}
+
+@media (max-width:767px) {
+  .how .container .content .card {
+    flex-direction: column;
+    /* gap: 20px; */
+    /* justify-content: center; */
+    text-align: center;
+  }
+}
+
+.how .container .content .card img {
+  width: 64px;
+}
+
+.how .container .content .card .info h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+.how .container .content .card .info p{
+  font-size: 18px;
+  color: var(--dim-color);
+  line-height: 1.7;
+}
+/* end of works */
 
 /* footer start */
 /* footer end */
