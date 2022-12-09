@@ -1539,7 +1539,7 @@ section.pricing {
   gap: 20px;
   background-color: white;
   padding: 30px;
-  box-shadow: 0 0 20px #2195f33f ,0 0 5px rgba(0, 0, 0, 0.219);
+  box-shadow: 0 0 5px #2195f33f ,0 0 20px rgba(0, 0, 0, 0.219);
 }
 
 .stats .container .box i{
