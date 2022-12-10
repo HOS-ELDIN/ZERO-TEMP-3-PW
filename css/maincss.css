@@ -1276,7 +1276,6 @@ section.pricing {
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 30px;
 }
-
 .pricing .container .box {
   display: flex;
   flex-direction: column;
@@ -1311,42 +1310,35 @@ section.pricing {
   bottom: 0;
   left: 0;
 }
-
 .pricing .container .box:hover::before,
 .pricing .container .box:hover::after {
   width: 100%;
 }
-
 /* most popular tag  */
 .pricing .container .box .most {
   position: absolute;
-  top: 52px;
-  right: -35px;
-  height: 40.1px;
+  top: 0px;
+  right: 20px;
+  width: 40px;
   color: white;
   background-color: var(--main-color);
-  padding: 10px 20px;
+  padding: 15px 10px;
   font-weight: bold;
   text-transform: capitalize;
   letter-spacing: 1px;
-  transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
 }
-
 .pricing .container .box .most::after {
   content: "";
   position: absolute;
-  border-color: var(--main-color) transparent var(--main-color)
-    var(--main-color);
+  border-color: var(--main-color) var(--main-color) transparent var(--main-color);
   border-width: 20px;
   border-style: solid;
-  top: 0;
-  right: -30px;
+  bottom: -30px;
+  right: 0;
 }
-
 @media (min-width:992px) {
   .pricing .container .box:nth-child(2) {
     transform: translateY(-15px);
@@ -1356,7 +1348,6 @@ section.pricing {
     -o-transform: translateY(-15px);
   }
 }
-
 /* inside the box styling */
 .pricing .container .box h3 {
   font-size: 25px;
@@ -1382,12 +1373,10 @@ section.pricing {
   color: var(--dim-color);
   margin-bottom: 20px;
 }
-
 .pricing .container .box ul {
   width: 100%;
   margin-bottom: 30px;
 }
-
 .pricing .container .box ul li {
   padding: 20px;
   border-top: 1px solid var(--background-color);
@@ -1399,7 +1388,6 @@ section.pricing {
   color: var(--main-color);
   margin-right: 10px;
 }
-
 .pricing .container .box a {
   color: var(--main-color);
   font-weight: bold;
@@ -1416,26 +1404,25 @@ section.pricing {
   -ms-transition: var(--transition-dur);
   -o-transition: var(--transition-dur);
 }
-
 .pricing .container .box a:hover {
   color: white;
-  background-color: var(--main-color);
+  background-color: var(--alt-main-color);
 }
 /* background styling  */
 .dots {
   position: absolute;
   z-index: -1;
-  }
+}
 .dots:nth-last-of-type(2) {
   /* background-color: #1787e0; */
   bottom: 140px;
   left: 0;
-  }
+}
 .dots:last-of-type {
   /* background-color: black; */
   top: 140px;
   right: 0;
-  }
+}
 /* end of pricing */
 
 /* start of videos */
@@ -1443,14 +1430,11 @@ section.pricing {
   display: flex;
   flex-wrap: wrap;
 }
-
 .videos .container ul {
   flex-basis: 300px;
   flex-grow: 1;
   border: 1px solid #e2e2e2;
 }
-
-
 .videos .container ul h4 {
   padding: 20px;
   text-transform: capitalize;
@@ -1461,18 +1445,24 @@ section.pricing {
 .videos .container ul h4:after {
   content: "\f074";
   font-family: "font awesome 5 free";
-
 }
-
 .videos .container ul li {
   padding: 20px;
   border-top: 1px solid #e2e2e2;
+  transition: var(--transition-dur);
+  -webkit-transition: var(--transition-dur);
+  -moz-transition: var(--transition-dur);
+  -ms-transition: var(--transition-dur);
+  -o-transition: var(--transition-dur);
 }
 .videos .container ul li a {
   display: block;
   text-transform: capitalize;
   color: black;
   margin-bottom: 10px;
+}
+.videos .container ul li:hover {
+  background-color: #fafafa;
 }
 .videos .container ul li:hover a {
   color: var(--main-color);
@@ -1497,7 +1487,6 @@ section.pricing {
     order: 2;
   }
 }
-
 .videos .container .content .img {
   margin-bottom: 10px;
 }
@@ -1536,8 +1525,8 @@ section.pricing {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
-
 .stats .container .box {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1546,14 +1535,45 @@ section.pricing {
   background-color: white;
   padding: 30px;
   box-shadow: 0 0 5px #2195f33f ,0 0 20px rgba(0, 0, 0, 0.219);
+  opacity: .8;
+  transition: var(--transition-dur);
+  -webkit-transition: var(--transition-dur);
+  -moz-transition: var(--transition-dur);
+  -ms-transition: var(--transition-dur);
+  -o-transition: var(--transition-dur);
 }
 
-.stats .container .box i{
-  color: #333;
+.stats .container .box::before,
+.stats .container .box::after {
+  content: "";
+  width: 2px;
+  height: 0;
+  position: absolute;
+  background-color: var(--main-color);
+  transition: calc(var(--transition-dur) + .5s) ;
+  -webkit-transition: calc(var(--transition-dur) + .5s) ;
+  -moz-transition: calc(var(--transition-dur) + .5s) ;
+  -ms-transition: calc(var(--transition-dur) + .5s) ;
+  -o-transition: calc(var(--transition-dur) + .5s) ;
 }
+.stats .container .box::before{
+left: 0;
+top: 0;
+}
+.stats .container .box::after {
+right:0;
+bottom: 0;
+}
+.stats .container .box:hover:after,
+.stats .container .box:hover:before {
+  height: 100%;
+}
+.stats .container .box:hover {
+  opacity: 1;
+}
+
 .stats .container .box h3 {
   font-size: 50px;
-  color: #333;
 }
 .stats .container .box p {
   color: var(--main-color);
