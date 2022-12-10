@@ -1803,6 +1803,21 @@ footer .copy-right span {
   font-weight: 700;
   text-transform: uppercase;
 }
+
+@media (max-width:767px) {
+  footer {
+    text-align: center;
+  }
+  .container .one ul {
+    justify-content: center;
+  }
+  .container .three .data {
+    flex-direction: column;
+  }
+  .container .four {
+    justify-content: center;
+  }
+}
 /* footer end */
 
 /* animations */
