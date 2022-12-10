@@ -549,11 +549,12 @@ section.landing {
 .features .container .f-box {
   text-align: center;
   border: 1px solid #ccc;
-  /* position: relative; */
+  isolation: isolate;
 }
 .features .container .img {
   position: relative;
   overflow: hidden;
+  z-index: -1;
 }
 .features .container .img::before {
   content: "";
@@ -601,6 +602,7 @@ section.landing {
 }
 .features .container .f-box .info {
   padding: 0 20px;
+  /* z-index: 3; */
 }
 .features .container .f-box .info h3 {
   text-transform: capitalize;
@@ -996,6 +998,8 @@ section.landing {
   height: 25px;
   width: 100%;
   background-color: #eee;
+  position: relative;
+  z-index: -1;
 }
 .skills .container .skill-bars .prog span {
   height: 100%;
@@ -1017,6 +1021,7 @@ section.landing {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
+  z-index: 5;
 }
 /* end of skills */
 
