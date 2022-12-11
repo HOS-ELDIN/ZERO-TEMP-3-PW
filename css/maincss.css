@@ -1,12 +1,23 @@
 /* start variables */
 :root {
-  --main-color: #2196f3;
-  /* --main-color: #f36421; */
-  --alt-main-color: #1787e0;
+  /* --main-color: #2196f3; */
+  /* --alt-main-color: #1787e0; */
+  /* --background-color: #ececec; */
+  /* --lite-BG-color: #f3f3f3; */
+  /* --dim-color: #777; */
+  /* --footer-color:#b9b9b9; */
+
+
+  --main-color: #e65100;
+  --alt-main-color: #c14c06;
+
   --background-color: #ececec;
   --lite-BG-color: #f3f3f3;
-  --dim-color: #777;
-  --footer-color:#b9b9b9;
+  --dim-color: #7c7c7b;
+  --footer-color:#bdbdbd;
+
+
+
   --transition-dur: 0.3s;
   --sec-padding: 60px;
 }
