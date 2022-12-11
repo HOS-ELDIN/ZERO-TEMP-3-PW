@@ -1726,11 +1726,6 @@ footer .container {
 }
 /* column one  */
 
-footer .container .column.one {
-/* text-align: center; */
-/* align-items: center; */
-}
-
 footer .container .column.one > a {
   display: block;
   /* color: white; */
