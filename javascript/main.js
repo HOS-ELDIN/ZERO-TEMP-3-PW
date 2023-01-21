@@ -27,7 +27,7 @@ function countDown() {
     }
   }
 }
-let count = setInterval(countDown,);
+let count = setInterval(countDown,1000);
 
 let upBtn = document.querySelector("body > a[href='#header']")
 
