@@ -1,5 +1,31 @@
+let toggler = document.querySelector(".mega-menu-toggler");
+let megaMenu = document.querySelector(".mega-menu");
+// click on toggeler to open and clode
+toggler.onclick = () => {
+	if (megaMenu.classList.contains("open")) {
+		megaMenu.classList.remove("open");
+	} else {
+		megaMenu.classList.add("open");
+	}
+};
+
+// if link in the menu clicked close it
+megaMenu.onclick = () => {
+	megaMenu.classList.remove("open");
+};
+
+// if esc btn clicked close it
+document.onkeyup = (e) => {
+	console.log(e.key);
+	if (e.key === "Escape") {
+		megaMenu.classList.remove("open");
+	}
+};
+
+// actions on scroll
 window.onscroll = function () {
 	// console.log(`window.scrollY ${window.scrollY}`);
+
 	//up btn showing
 	if (window.scrollY > 400) {
 		upBtn.style.display = "block";
@@ -13,6 +39,7 @@ window.onscroll = function () {
 	} else {
 		unFill();
 	}
+
 	// fill numbers effect
 	if (window.scrollY > stats.offsetTop - stats.scrollHeight / 2) {
 		fillNumbers();
@@ -58,7 +85,7 @@ let timeToEvent = eventDateInSec - today;
 function countDown() {
 	// let nn = Math.floor(timeToEvent / (360 * 24 * 30));
 	// let dd = Math.floor((timeToEvent % (3600 * 24 * 30)) / 86400),
-	let dd = Math.floor((timeToEvent / (3600 * 24))),
+	let dd = Math.floor(timeToEvent / (3600 * 24)),
 		hh = Math.floor((timeToEvent % (3600 * 24)) / 3600),
 		mm = Math.floor((timeToEvent % 3600) / 60),
 		ss = Math.floor(timeToEvent % 60);

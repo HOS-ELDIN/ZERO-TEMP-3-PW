@@ -268,7 +268,7 @@ header .container nav .main-nav li a:hover:before {
 	/* second way to fill */
 	left: 0;
 }
-/* stat mega menu  */
+/* start mega menu  */
 header .container nav .main-nav .mega-menu {
 	/* display: none; */
 	display: flex;
@@ -294,6 +294,12 @@ header .container nav .main-nav .mega-menu {
 	}
 }
 header .container nav .main-nav > li:last-child:hover .mega-menu {
+	opacity: 1;
+	top: calc(100% + 1px);
+	z-index: 100;
+}
+
+header .container nav .mega-menu.open {
 	opacity: 1;
 	top: calc(100% + 1px);
 	z-index: 100;
