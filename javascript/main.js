@@ -1,5 +1,5 @@
 window.onscroll = function () {
-	console.log(`window.scrollY ${window.scrollY}`);
+	// console.log(`window.scrollY ${window.scrollY}`);
 	//up btn showing
 	if (window.scrollY > 400) {
 		upBtn.style.display = "block";
@@ -47,37 +47,37 @@ let second = document.querySelector(".seconds");
 let minutes = document.querySelector(".minutes");
 let hour = document.querySelector(".hours");
 let day = document.querySelector(".days");
+// let mounths = document.querySelector(".mounths");
 
+// let timeToEvent = 2201130;
+let eventDate = "jun 07, 2023 10:00:00";
+let today = new Date().getTime() / 1000;
+let eventDateInSec = new Date(eventDate).getTime() / 1000;
+
+let timeToEvent = eventDateInSec - today;
 function countDown() {
-	second.innerHTML -= 1;
-	if (second.innerHTML === "0") {
-		if (parseInt(minutes.innerHTML) > 0) {
-			minutes.innerHTML -= 1;
-			second.innerHTML = 60;
-		}
-		if (minutes.innerHTML === "0") {
-			if (parseInt(hour.innerHTML) > 0) {
-				hour.innerHTML -= 1;
-				minutes.innerHTML = 60;
-			}
-			if (hour.innerHTML === "0") {
-				if (parseInt(day.innerHTML) > 0) {
-					day.innerHTML -= 1;
-					hour.innerHTML = 24;
-				}
-				if (
-					day.innerHTML === "0" &&
-					hour.innerHTML === "0" &&
-					minutes.innerHTML === "0" &&
-					second.innerHTML === "0"
-				) {
-					clearInterval(count);
-				}
-			}
-		}
-	}
+	// let nn = Math.floor(timeToEvent / (360 * 24 * 30));
+	// let dd = Math.floor((timeToEvent % (3600 * 24 * 30)) / 86400),
+	let dd = Math.floor((timeToEvent / (3600 * 24))),
+		hh = Math.floor((timeToEvent % (3600 * 24)) / 3600),
+		mm = Math.floor((timeToEvent % 3600) / 60),
+		ss = Math.floor(timeToEvent % 60);
+
+	// mounths.innerHTML = nn < 10 ? `0${nn}` : nn;
+	day.innerHTML = dd < 10 ? `0${dd}` : dd;
+	hour.innerHTML = hh < 10 ? `0${hh}` : hh;
+	minutes.innerHTML = mm < 10 ? `0${mm}` : mm;
+	second.innerHTML = ss < 10 ? `0${ss}` : ss;
+
+	timeToEvent--;
 }
-let count = setInterval(countDown, 1000);
+let countingInterval = setInterval(() => {
+	if (timeToEvent >= 0) {
+		countDown();
+	} else {
+		clearInterval(countingInterval);
+	}
+}, 1000);
 
 //#################################################
 // upbtn part

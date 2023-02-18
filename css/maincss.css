@@ -1158,7 +1158,7 @@ section.landing {
 	width: 100%;
 }
 .events .container .info .count-down .unit {
-	width: 70px;
+	width: fit-content;
 	border: 1px solid #ccc;
 	border-radius: 8px;
 	-webkit-border-radius: 8px;
